@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">KotlinWeatherApp</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="units">Units</string>
+    <string name="unit">UNITS:</string>
+    <string name="zip_codes">ZIP CODE:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="today">TODAY</string>
+    <string name="weather_condition">WEATHER CONDITION</string>
+    <string name="temperature">TEMPERATURE</string>
+    <string name="city_name">CITY NAME</string>
+    <string name="_4_00_pm">4:00 PM</string>
+    <string name="_7_deg">7 deg</string>
 </resources>

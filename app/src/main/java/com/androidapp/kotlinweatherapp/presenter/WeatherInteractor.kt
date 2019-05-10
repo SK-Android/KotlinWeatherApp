@@ -1,4 +1,4 @@
-package com.androidapp.kotlinweatherapp
+package com.androidapp.kotlinweatherapp.presenter
 
 import com.androidapp.kotlinweatherapp.model.CityList
 import io.reactivex.Observable

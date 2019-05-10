@@ -1,4 +1,4 @@
-package com.androidapp.kotlinweatherapp
+package com.androidapp.kotlinweatherapp.presenter
 
 import com.androidapp.kotlinweatherapp.model.CityList
 import com.androidapp.kotlinweatherapp.service.ApiInterface
@@ -7,7 +7,6 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class WeatherInteractorImpl : WeatherInteractor {
 

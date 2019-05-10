@@ -1,25 +1,24 @@
-package com.androidapp.kotlinweatherapp
+package com.androidapp.kotlinweatherapp.presenter
 
 import android.content.Context
 import android.util.Log
-import com.androidapp.kotlinweatherapp.model.City
 import com.androidapp.kotlinweatherapp.model.CityList
+import com.androidapp.kotlinweatherapp.view.WeatherView
 import kotlinx.coroutines.*
-import retrofit2.Response
 
-class WeatherPresenter(val weatherInteractorImpl: WeatherInteractorImpl
-                       , var context: Context){
+class WeatherPresenter(var weatherInteractorImpl: WeatherInteractorImpl
+                       ,var view:WeatherView?, var context:Context){
 
-    var view:WeatherView? = null
-
-    fun bind(view: WeatherView) {
-        this.view = view
-    }
-
-
-    fun unbind() {
-        view = null
-    }
+//    var view: WeatherView? = null
+//
+//    fun bind(view: WeatherView) {
+//        this.view = view
+//    }
+//
+//
+//    fun unbind() {
+//        view = null
+//    }
 
 
     fun getWeatherData(zip: String, appid: String){
@@ -35,6 +34,15 @@ class WeatherPresenter(val weatherInteractorImpl: WeatherInteractorImpl
                     val cityList:CityList? = response.body()
                     Log.i("WeatherPresenter", cityList!!.list!!.size.toString())
                     Log.i("WeatherPresenter", cityList.city.name)
+
+                    val weatherList = cityList.list
+                    val city = cityList.city
+
+                    view?.showWeatherData(cityList, weatherList, city)
+                }
+
+                else{
+                    Log.i("WeatherPresenter", "Error: ${response.code()}")
                 }
 
 
